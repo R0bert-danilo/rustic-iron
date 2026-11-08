@@ -1,0 +1,327 @@
+/**
+ * RUSTIC IRON - CSS DE AUTENTICAÇÃO (PADRÃO VISUAL ORIGINAL COM MATERIAL SYMBOLS)
+ */
+
+:root {
+  --color-primary: #d96200;
+  --color-primary-hover: #b85300;
+  --color-primary-50: rgba(217, 98, 0, 0.08);
+  --color-primary-100: rgba(217, 98, 0, 0.15);
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --color-background: #121214;
+  --color-surface: #1e1e24;
+  --color-surface-hover: #272730;
+  --color-border: #2e2e38;
+
+  --color-text: #f0f0f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --transition: 0.2s ease;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 30px 20px;
+  background: radial-gradient(circle at top, rgba(217, 98, 0, 0.08) 0%, rgba(18, 18, 20, 0.98) 70%), #121214;
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: var(--color-surface);
+  padding: 6px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  width: 100%;
+  max-width: 440px;
+}
+
+.btn-toggle {
+  flex: 1;
+  height: 42px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-toggle .material-symbols-rounded {
+  font-size: 18px;
+}
+
+.btn-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-surface-hover);
+}
+
+.btn-toggle.active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(217, 98, 0, 0.35);
+}
+
+.auth-card {
+  display: none;
+  width: 100%;
+}
+
+.auth-card.active {
+  display: block;
+}
+
+#secao-login.active {
+  max-width: 440px;
+}
+
+form {
+  width: 100%;
+  padding: 36px 32px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  color: var(--color-text);
+}
+
+form h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+form h2 .material-symbols-rounded {
+  color: var(--color-primary);
+  font-size: 28px;
+}
+
+.auth-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.login-box {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.login-box input {
+  width: 100%;
+  height: 100%;
+  padding: 0 44px 0 16px;
+  background: #141417;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  color: var(--color-text);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.login-box input:focus {
+  border-color: var(--color-primary);
+  background: #19191d;
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.login-box input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.login-box .material-symbols-rounded {
+  position: absolute;
+  right: 14px;
+  color: var(--color-text-muted);
+  font-size: 20px;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.login-box:focus-within .material-symbols-rounded {
+  color: var(--color-primary);
+}
+
+.opcoes-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 22px;
+  color: var(--color-text-secondary);
+}
+
+.opcoes-login label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.opcoes-login input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.opcoes-login a,
+.registro-link a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.opcoes-login a:hover,
+.registro-link a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+
+.registro-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 22px;
+  color: var(--color-text-secondary);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-wrapper label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-grid input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  background: #141417;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  color: var(--color-text);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.form-grid input:focus {
+  border-color: var(--color-primary);
+  background: #19191d;
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.form-grid input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-grid .full-width {
+  grid-column: 1 / -1;
+}
+
+.btn-auth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(217, 98, 0, 0.3);
+}
+
+.btn-auth .material-symbols-rounded {
+  font-size: 20px;
+}
+
+.btn-auth:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.actions {
+  margin-top: 22px;
+}
+
+@media (max-width: 650px) {
+  form { padding: 26px 20px; }
+  .auth-toggle { flex-direction: column; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .full-width { grid-column: auto; }
+}
